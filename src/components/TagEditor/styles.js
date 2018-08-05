@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Color from 'color';
 
-const lightBlue = Color('#0FADE9').lighten(0.5);
+// const lightBlue = Color('#0FADE9').lighten(0.5);
 
 export const TagEditorWrapper = styled.div`
   width: 100%;
@@ -37,6 +37,7 @@ export const Input = styled.input`
 
   &::-webkit-input-placeholder {
     opacity: 0.4;
+    font-size: 12px;
   }
 
   &:focus {
@@ -68,7 +69,7 @@ export const ColorSquare = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 3px;
-  background-color: ${({ color }) => color};
+  background-color: ${({ color }) => color || 'red'};
   margin-right: 6px;
 `;
 
