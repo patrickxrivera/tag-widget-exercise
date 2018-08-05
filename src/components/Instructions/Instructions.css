@@ -1,0 +1,42 @@
+.instructions {
+  background: white;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 2px;
+}
+
+.mockup {
+  padding: 20px;
+  width: 80%;
+}
+
+.mockup img {
+  max-width: 100%;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.section-description {
+  font-size: 12px;
+  color: #3E4042;
+}
+
+.section-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.section-list-item {
+  padding: 5px;
+  color: white;
+}
+
+/*[
+  #0FADE9, #0D40D9, #F6524F, #9F0000,
+  #05D9B5, #00C361, #FFCF2E, #FF7A1D,
+  #B372E6, #5621A2, #8C8D91, #3E4042
+]*/
