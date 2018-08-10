@@ -20,7 +20,7 @@ export const TagEditorWrapper = styled.div`
 // TODO: figure out best practices for implementing this
 export const InputOverlay = styled.div`
   position: absolute;
-  top: 42.3%;
+  top: 45.2%;
   margin-left: 20px;
 `;
 
@@ -30,7 +30,7 @@ export const TagEditorTitle = styled.h5`
 `;
 
 export const InputWrapper = styled.div`
-  height: 20px;
+  height: 21px;
   width: 200px;
   border: 1px solid rgba(189, 195, 199, 0.4);
   background-color: #fff;
@@ -62,6 +62,8 @@ export const OptionsWrapper = styled.div`
   border-radius: 4px;
   width: 210px;
   margin-top: 4px;
+  position: absolute;
+  margin-top: 40px;
 `;
 
 export const Option = styled.div`
@@ -96,7 +98,7 @@ export const HorizontalRule = styled.hr`
 export const ActionsWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
 export const Button = styled.div`
@@ -113,4 +115,43 @@ export const Button = styled.div`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const TagListWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const TagListItemWrapper = styled.div`
+  background-color: blue;
+  border-radius: 3px;
+  align-items: center;
+  margin-right: 7px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const TagListItemText = styled.div`
+  color: #fff;
+  font-size: 12px;
+  padding: 5px;
+`;
+
+export const DeleteIconWrapper = styled.div`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid grey;
+`;
+
+export const EmptyTagListText = styled.span`
+  font-size: 14px;
+`;
+
+export const TagsWrapper = styled.div`
+  min-height: 30px;
+  display: flex;
+  align-items: center;
 `;

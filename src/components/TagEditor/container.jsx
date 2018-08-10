@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import getId from 'uuid/v4';
 
 import tagsJSON from '../../api/tags.json';
-import { addExistingTags, addExistingTag } from '../../redux/tagEditor/actions';
+import * as actions from '../../redux/tagEditor/actions';
 import TagEditor from './';
 
 const isEmpty = (arr) => !arr.length;
@@ -23,19 +24,26 @@ class TagEditorContainer extends Component {
   };
 
   handleCacheMiss = async () => {
-    const tags = tagsJSON['tags:'];
+    const tags = tagsJSON['tags:'].map((tag) => ({ ...tag, id: getId() }));
     this.props.addExistingTags(tags);
   };
 
-  handleInputSubmit = async (e) => {
+  handleAddTagClick = async (e) => {
     e.preventDefault();
 
     const newTag = {
       label: this.state.inputValue,
-      color: 'red'
+      color: 'red',
+      id: getId()
     };
 
-    this.props.addExistingTag(newTag);
+    this.props.addToTagList(newTag);
+
+    this.setState({ inputValue: '' });
+  };
+
+  handleRemoveTagClick = (tag) => {
+    this.props.removeFromTagList(tag);
   };
 
   handleInputChange = (e) => this.setState({ inputValue: e.target.value });
@@ -46,9 +54,11 @@ class TagEditorContainer extends Component {
     return (
       <TagEditor
         handleInputChange={this.handleInputChange}
-        handleInputSubmit={this.handleInputSubmit}
+        handleAddTagClick={this.handleAddTagClick}
+        handleRemoveTagClick={this.handleRemoveTagClick}
         toggleInputFocus={this.toggleInputFocus}
         existingTags={this.props.existingTags}
+        tagList={this.props.tagList}
         {...this.state}
       />
     );
@@ -64,4 +74,4 @@ const mapStateToProps = (state) => ({
   tagList: getTagList(state)
 });
 
-export default connect(mapStateToProps, { addExistingTags, addExistingTag })(TagEditorContainer);
+export default connect(mapStateToProps, { ...actions })(TagEditorContainer);
