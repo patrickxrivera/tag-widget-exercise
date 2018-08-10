@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import Color from 'color';
 
-// const lightBlue = Color('#0FADE9').lighten(0.5);
+export const Wrapper = styled.div`
+  width: 350px;
+`;
 
 export const TagEditorWrapper = styled.div`
   width: 100%;
@@ -11,6 +12,16 @@ export const TagEditorWrapper = styled.div`
   padding: 10px 20px;
   border-radius: 6px;
   min-height: 220px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+`;
+
+// TODO: figure out best practices for implementing this
+export const InputOverlay = styled.div`
+  position: absolute;
+  top: 42.3%;
+  margin-left: 20px;
 `;
 
 export const TagEditorTitle = styled.h5`
@@ -79,4 +90,27 @@ export const OptionText = styled.span`
 
 export const HorizontalRule = styled.hr`
   opacity: 0.3;
+  width: 100%;
+`;
+
+export const ActionsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const Button = styled.div`
+  height: 27.6px;
+  width: 80px;
+  border-radius: 3px;
+  background-color: #2f3640;
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Instructions from '../Instructions';
-import TagEditor from '../TagEditor';
+import TagEditorContainer from '../TagEditor/container.jsx';
 
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
         <Instructions />
       </div>
       <div className="app-child">
-        <TagEditor />
+        <TagEditorContainer />
       </div>
     </div>
   );
