@@ -42,7 +42,7 @@ class TagEditorContainer extends Component {
     this.setState({ inputValue: '' });
   };
 
-  handleRemoveTagClick = (tag) => {
+  handleRemoveTagClick = (tag) => () => {
     this.props.removeFromTagList(tag);
   };
 
